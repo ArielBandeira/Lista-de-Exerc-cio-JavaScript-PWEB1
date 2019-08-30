@@ -5,43 +5,36 @@ var checkbox = document.getElementById("myCheckbox")
 var prev = document.querySelector('.gallery__prev');
 var next = document.querySelector('.gallery__next');
 
+var listen;
+var listenn;
 
-checkbox.addEventListener("change", function() {
-  if(checkbox.checked != true){
-    prev.addEventListener("click", function() {
-         stream.insertBefore(items[items.length - 1], items[0]);
-         items = document.querySelectorAll('.gallery__item');
-       });
-
-     next.addEventListener("click", function() {
-         stream.appendChild(items[0]);
-         items = document.querySelectorAll('.gallery__item');
-     });
-  }else if(checkbox.checked === true){
-    prev.addEventListener("mouseover", function() {
-         stream.insertBefore(items[items.length - 1], items[0]);
-         items = document.querySelectorAll('.gallery__item');
-       });
-
-     next.addEventListener("mouseover", function() {
-         stream.appendChild(items[0]);
-         items = document.querySelectorAll('.gallery__item');
-     });
-  }
-
+prev.addEventListener("mouseover", listen = function() {
+    stream.insertBefore(items[items.length - 1], items[0]);
+    items = document.querySelectorAll('.gallery__item');
 });
 
+next.addEventListener("mouseover", listenn = function() {
+    stream.appendChild(items[0]);
+    items = document.querySelectorAll('.gallery__item');
+});
 
+checkbox.addEventListener("click", function() {
 
-      //
-      //
-      //
-      // prev.addEventListener("mouseover", function() {
-      //     stream.insertBefore(items[items.length - 1], items[0]);
-      //     items = document.querySelectorAll('.gallery__item');
-      //   });
-      //
-      // next.addEventListener("mouseover", function() {
-      //     stream.appendChild(items[0]);
-      //     items = document.querySelectorAll('.gallery__item');
-      // });
+  if(checkbox.checked == false){
+    prev.addEventListener("mouseover", listen = function() {
+        stream.insertBefore(items[items.length - 1], items[0]);
+        items = document.querySelectorAll('.gallery__item');
+    });
+
+    next.addEventListener("mouseover", listenn = function() {
+        stream.appendChild(items[0]);
+        items = document.querySelectorAll('.gallery__item');
+    });
+
+  }else if(checkbox.checked == true){
+
+    prev.removeEventListener("mouseover", listen);
+    next.removeEventListener("mouseover", listenn);
+
+  }else{}
+});
