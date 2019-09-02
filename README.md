@@ -8,7 +8,7 @@ de um arquivo HTML para serem testados. Deste modo, embora
 as questões não citem, para cada programa/script criado, crie
 também uma página HTML para testá-lo.
 
->O arquivo index.html dá acesso à todas as quastões.
+>**O arquivo index.html dá acesso à todas as quastões.**
 
 1. Crie uma programa JavaScript que consiga acender um
 lâmpada a partir de um botão clicado pelo usuário.
